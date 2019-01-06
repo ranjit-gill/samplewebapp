@@ -16,6 +16,7 @@
 <p>HTML buttons are defined with the button tag:</p>
 
 <button>Click me</button>
+<button>Click me</button>
 
 </body>
 </html>
