@@ -1,18 +1,25 @@
 <html>
 <body>
-<h1>Hello World!</h1>
-<h1>This is a DevOps Demo</h1>
-<h2>This is a DevOps Demo</h2>
-<h3>This is a DevOps Demo</h3>
-<h1>This is a DevOps Demo</h1>
-<h2>This is a DevOps Demo</h2>
-<h3>This is a DevOps Demo</h3>
-<h1>This is a DevOps Demo</h1>
-<h2>This is a DevOps Demo</h2>
-<h3>This is a DevOps Demo</h3>
+  
 <marquee> <b>Hello....How are you Doing</b> </marquee>
 <marquee> <h1>Hello....How are you Doing...This is done on staging branch</h1> </marquee>
 <h2>HTML Buttons</h2>
+<p>HTML buttons are defined with the button tag:</p>
+  
+  
+<h1>Hello World!</h1>
+  
+  
+  
+<h1>This is a DevOps Demo</h1>
+
+
+<marquee> <b>Hello....How are you Doing</b> </marquee>
+<marquee> <h1>Hello....How are you Doing...This is done on staging branch</h1> </marquee>
+  
+  
+<h2>HTML Buttons</h2>
+  
 <p>HTML buttons are defined with the button tag:</p>
 
 <button>Click me</button>
