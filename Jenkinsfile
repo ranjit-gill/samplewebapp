@@ -27,7 +27,8 @@ pipeline {
 
     stage('deployment') {
       steps {
-        sh 'cp target/*.war /usr/share/tomcat/webapps/'
+        echo 'Starting Application Deployment'
+        sh 'sudo cp target/*.war /usr/share/tomcat/webapps/'
         echo 'Application Deployed Successfully'
       }
     }
