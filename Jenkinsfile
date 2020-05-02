@@ -19,7 +19,7 @@ pipeline {
     stage('undeploy') {
       steps {
         echo 'Undeploying existing application from tomcat'
-        sh 'rm -rf /usr/share/tomcat/webapps/*.war'
+        sh 'sudo rm -rf /usr/share/tomcat/webapps/*.war'
         sleep 30
         echo 'Application is undeployed'
       }
