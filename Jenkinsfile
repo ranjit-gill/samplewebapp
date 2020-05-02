@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Git') {
+    stage('Git Pull') {
       steps {
         git 'https://github.com/ranjit-gill/samplewebapp.git'
       }
