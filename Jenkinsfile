@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '\'mvn clean install\''
+        sh '\'/prod/apps/apache-maven-3.6.3/bin/mvn clean install\''
       }
     }
 
