@@ -1,15 +1,23 @@
 pipeline {
   agent any
   stages {
-    stage('Git Pull') {
+    stage('scm') {
       steps {
-        git 'https://github.com/ranjit-gill/samplewebapp.git'
+        git 'https://github.com/ranjit-gill/samplewebapp'
       }
     }
 
-    stage('Build') {
+    stage('initialize') {
       steps {
-        sh '\'/prod/apps/apache-maven-3.6.3/bin/mvn clean install\''
+        sh '''echo "PATH = ${PATH}"
+echo "M2_HOME = ${M2_HOME}"
+'''
+      }
+    }
+
+    stage('build') {
+      steps {
+        sh 'mvn clean install'
       }
     }
 
