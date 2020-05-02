@@ -1,29 +1,23 @@
 pipeline {
-  agent any
-  stages {
-    stage('scm') {
-      steps {
-        git 'https://github.com/ranjit-gill/samplewebapp'
-      }
+    agent any
+    tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
     }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
 
-    stage('initialize') {
-      steps {
-        sh '''echo "PATH = ${PATH}"
-echo "M2_HOME = ${M2_HOME}"
-'''
-      }
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
+        }
     }
-
-    stage('build') {
-      steps {
-        sh 'mvn clean install'
-      }
-    }
-
-  }
-  environment {
-    jdk = 'jdk8'
-    maven = 'Maven 3.6.3'
-  }
 }
