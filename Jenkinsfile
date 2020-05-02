@@ -1,24 +1,34 @@
 pipeline {
   agent any
   stages {
-    stage('Fetch Code') {
+    stage('fetch Code') {
       steps {
         git 'https://github.com/ranjit-gill/samplewebapp.git'
-      }
-    }
-
-    stage('initialize ') {
-      steps {
-        sh '''M2_HOME=/prod/apps/apache-maven-3.6.3
-export PATH=$PATH:$M2_HOME/bin
-echo $PATH
-mvn -version'''
+        echo 'source code is fetched from GitHub'
       }
     }
 
     stage('build') {
       steps {
+        echo 'Starting the Build Process'
         sh 'mvn clean install'
+        echo 'Build Created Successfully'
+      }
+    }
+
+    stage('undeploy') {
+      steps {
+        echo 'Undeploying existing application from tomcat'
+        sh 'rm -rf /usr/share/tomcat/webapps/*.war'
+        sleep 30
+        echo 'Application is undeployed'
+      }
+    }
+
+    stage('deployment') {
+      steps {
+        sh 'cp target/*.war /usr/share/tomcat/webapps/'
+        echo 'Application Deployed Successfully'
       }
     }
 
