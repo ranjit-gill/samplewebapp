@@ -16,5 +16,11 @@ mvn -version'''
       }
     }
 
+    stage('build') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+
   }
 }
