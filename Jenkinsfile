@@ -14,4 +14,8 @@ pipeline {
     }
 
   }
+  environment {
+    jdk = 'jdk8'
+    maven = 'Maven 3.6.3'
+  }
 }
