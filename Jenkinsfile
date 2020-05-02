@@ -18,7 +18,9 @@ mvn -version'''
 
     stage('build') {
       steps {
-        sh 'mvn clean install'
+        sh '''M2_HOME=/prod/apps/apache-maven-3.6.3
+export PATH=$PATH:$M2_HOME/bin
+mvn clean install'''
       }
     }
 
