@@ -1,5 +1,5 @@
 pipeline {
-  agent node1
+  agent { node { label 'linux-node-1' } }
   stages {
     stage('Latest revision from SCM') {
       steps {
