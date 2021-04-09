@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent node1
   stages {
     stage('fetch Code') {
       steps {
@@ -16,22 +16,22 @@ pipeline {
       }
     }
 
-    stage('undeploy') {
-      steps {
-        echo 'Undeploying existing application from tomcat'
-        sh 'sudo rm -rf /usr/share/tomcat/webapps/*.war'
-        sleep 30
-        echo 'Application is undeployed'
-      }
-    }
+  #  stage('undeploy') {
+  #    steps {
+  #      echo 'Undeploying existing application from tomcat'
+  #      sh 'sudo rm -rf /usr/share/tomcat/webapps/*.war'
+  #      sleep 30
+  #      echo 'Application is undeployed'
+  #    }
+  #  }
 
-    stage('deployment') {
-      steps {
-        echo 'Starting Application Deployment'
-        sh 'sudo cp target/*.war /usr/share/tomcat/webapps/'
-        echo 'Application Deployed Successfully'
-      }
-    }
+  #  stage('deployment') {
+  #    steps {
+  #      echo 'Starting Application Deployment'
+  #      sh 'sudo cp target/*.war /usr/share/tomcat/webapps/'
+  #      echo 'Application Deployed Successfully'
+  #    }
+  #  }
 
   }
 }
